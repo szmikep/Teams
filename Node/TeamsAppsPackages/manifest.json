@@ -1,0 +1,129 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.0",
+    "version": "1.0.0",
+    "id": "F90C7384-2CD2-4E81-8593-A9F8841D9F36",
+    "packageName": "com.microsoft.teams.samples.sampleapp",
+    "developer": {
+        "name": "Microsoft",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+    },
+    "name": {
+        "short": "Sample App in Node.js",
+        "full": "Sample App in Node.js - full name"
+    },
+    "description": {
+        "short": "This is a small sample app we made for you, in Node.js!",
+        "full": "This is a small sample app we made for you, in Node.js! This app has samples of many of the capabilities Microsoft Teams supports"
+    },
+    "icons": {
+        "outline": "outline_icon.png",
+        "color": "color_icon.png"
+    },
+    "accentColor": "#3F487F",
+    "staticTabs": [
+        {
+            "entityId": "mytasks",
+            "name": "My Tasks",
+            "contentUrl": "https://62f3fa02.ngrok.io/tabs/index",
+            "websiteUrl": "https://62f3fa02.ngrok.io/tabs/index?web=1",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "info",
+            "name": "Info",
+            "contentUrl": "https://62f3fa02.ngrok.io/tabs/about",
+            "websiteUrl": "https://62f3fa02.ngrok.io/tabs/about?web=1",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://62f3fa02.ngrok.io/tabs/configure",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
+    "bots": [
+        {
+            "botId": "3fbfe6fc-9446-496d-82c7-ab234cdfeb08",
+            "isNotificationOnly": false,
+            "scopes": [
+                "team",
+                "personal"
+            ],
+            "commandLists": [
+                {
+                    "scopes": [
+                        "team",
+                        "personal"
+                    ],
+                    "commands": [
+                        {
+                            "title": "help",
+                            "description": "Find out what I can do"
+                        },
+                        {
+                            "title": "create",
+                            "description": "Create a brand new task, just give me a title"
+                        },
+                        {
+                            "title": "find",
+                            "description": "I can help you find a task, just give me a title"
+                        },
+                        {
+                            "title": "link",
+                            "description": "Create a link to a tab, just give me the tab name"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connectors": [
+        {
+            "connectorId": "ed618917-c700-4ae1-97a4-a9e24eeb9281",
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "3fbfe6fc-9446-496d-82c7-ab234cdfeb08",
+            "scopes": [
+                "personal",
+                "team"
+            ],
+            "commands": [
+                {
+                    "id": "searchCmd",
+                    "title": "Search tasks",
+                    "description": "Search tasks",
+                    "parameters": [
+                        {
+                            "name": "search",
+                            "title": "Search",
+                            "description": "Search tasks"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "62f3fa02.ngrok.io"
+    ]
+}
